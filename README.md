@@ -43,14 +43,17 @@ The model's weights will be saved every single epoch in logs/
 python test.py
 ```
 
-For testing data, we first use simliar dataloader to load testing images.  
+For testing data, we first load the test.json.
+```python
+cocoGt = COCO("../test.json")
+```
 Then we import the saved model.
 ```python
 model = modellib.MaskRCNN(mode="inference", config=config, model_dir='logs/')
 model_path = model.find_last()
 model.load_weights(model_path, by_name=True)
 ```
-  
-In the end, write 'image_id', 'category_id', 'segmentation' and 'score' result to a .josn file.  
+After predicting results, we transform the output to perpare the submission.json file.  
+In the end, write 'image_id', 'category_id', 'segmentation' and 'score' result to a submission.josn file.  
 Upload google drive submission.  
 Best accuracy : mAP : 0.47644.  
