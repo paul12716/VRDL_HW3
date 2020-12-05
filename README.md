@@ -21,7 +21,7 @@ pip3 install -r requirements.txt
 ```bach
 python3 setup.py install
 ```
-4. Install pycocotools from one of these repos.
+4. Install pycocotools from this repos.
 - Linux: https://github.com/waleedka/coco
 
 ## Training
